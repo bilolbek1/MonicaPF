@@ -1,8 +1,8 @@
 # MonicaPF: Python Web Framework built for learning purposes
 
 
-![Purpose](https://img.shields.io/badge/:learning-green)
-![PyPI - Version](https://img.shields.io/pypi/v/:monicapf)
+![Purpose](https://img.shields.io/badge/learning-green)
+![PyPI - Version](https://img.shields.io/pypi/v/monicapf)
 
 
 MonicaPF it is python web framework
