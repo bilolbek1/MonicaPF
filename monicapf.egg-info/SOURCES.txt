@@ -1,0 +1,7 @@
+README.md
+setup.py
+monicapf.egg-info/PKG-INFO
+monicapf.egg-info/SOURCES.txt
+monicapf.egg-info/dependency_links.txt
+monicapf.egg-info/requires.txt
+monicapf.egg-info/top_level.txt
