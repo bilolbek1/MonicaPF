@@ -91,7 +91,7 @@ pip install monicapf
     Create "static" folder and save inside that folder static files
 
     
-    ```html
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +107,7 @@ pip install monicapf
     <p>This is a paragraph</p>
 </body>
 </html>
-    ```
+```
 
 
 
