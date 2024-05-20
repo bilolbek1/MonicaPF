@@ -20,72 +20,73 @@ pip install monicapf
 
 ### Basic Usage:
 
-    ```python
-    from monicapf.app import Monica
+```python
+from monicapf.app import Monica
 
 
-    app = Monica()      
+app = Monica()      
 
 
 # Add Allowed Methods:
-    @app.route('/home', allowed_methods=['get'])
-    def home(request, response):
-        if request.method == 'GET':
-            response.text = 'Hello this is home page'
-        elif request.method == 'POST':
-            response.text = 'POST '
+@app.route('/home', allowed_methods=['get'])
+def home(request, response):
+    if request.method == 'GET':
+        response.text = 'Hello this is home page'
+    elif request.method == 'POST':
+        response.text = 'POST '
 
 
 # Simple Route:
-    @app.route('/about')
-    def about(request, response):
-        response.text = 'Hello this is about page'    
-        
+@app.route('/about')
+def about(request, response):
+    response.text = 'Hello this is about page'    
+    
 
 # Parametrize Route:
-    @app.route('/hello/{name}')
-    def hello(request, response, name):
-        response.text = f"Just say hello. Hello {name}"    
+@app.route('/hello/{name}')
+def hello(request, response, name):
+    response.text = f"Just say hello. Hello {name}"    
 
 
 # Class Based Handlers:
-    @app.route('/books')
-    class Book:
-        def get(self, request, response):
-            response.text = 'Books GET request'
+@app.route('/books')
+class Book:
+    def get(self, request, response):
+        response.text = 'Books GET request'
 
-        def post(self, request, response):
-            response.text = 'Books POST request'
+    def post(self, request, response):
+        response.text = 'Books POST request'
 
 
-    def new_handler(req, res):
-        res.text = 'New handler'
+def new_handler(req, res):
+    res.text = 'New handler'
 
-    app.add_route('/new-handler', new_handler)
+app.add_route('/new-handler', new_handler)
 
 
 
 
 # Json data:
-    @app.route('/json')
-    def json(req, res):
-        res.json = {
-            'name': 'Request',
-            'Body': 'Json response',
-        }
-    ```
+@app.route('/json')
+def json(req, res):
+    res.json = {
+        'name': 'Request',
+        'Body': 'Json response',
+    }
+```
 
 # Add Template
     Create "templates" folder and save inside that folder htmls
 
-    ```python
-    @app.route('/template')
-    def template(req, res):
-        res.body = app.template(
-            'home.html',
-            context={'name': 'Bilol', 'title': 'Template working'}
-        ) 
-    ```       
+```python
+@app.route('/template')
+def template(req, res):
+    res.body = app.template(
+        'home.html',
+        context={'name': 'Bilol', 'title': 'Template working'}
+    ) 
+    
+```       
 
 # Add Static Files
     Create "static" folder and save inside that folder static files
